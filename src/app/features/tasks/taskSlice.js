@@ -9,7 +9,7 @@ const initialState = [
   },
   {
     id: "2",
-    title: "Task 1",
+    title: "Task 2",
     description: "Barrer",
     completed: false,
   },
@@ -17,7 +17,12 @@ const initialState = [
 export const taskSlice = createSlice({
   name: "tasks",
   initialState,
-  reducers: {},
+  reducers: {
+    addTask: (state, action) => {
+      state.push(action.payload);
+    },
+  },
 });
 
-export default taskSlice.reducers;
+export const { addTask } = taskSlice.actions;
+export default taskSlice.reducer;
