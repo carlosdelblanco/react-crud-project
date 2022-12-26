@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import { addTask } from "../features/tasks/taskSlice";
+import { addTask, editTask } from "../features/tasks/taskSlice";
 
 function TaskForm() {
   const [task, setTask] = useState({
@@ -24,12 +24,17 @@ function TaskForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addTask({
-        ...task,
-        id: uuid(),
-      })
-    );
+    if (params.id) {
+      dispatch(editTask(task));
+    } else {
+      dispatch(
+        addTask({
+          ...task,
+          id: uuid(),
+        })
+      );
+    }
+
     navigate("/");
   };
   useEffect(() => {
@@ -45,11 +50,13 @@ function TaskForm() {
         type="text"
         placeholder="title"
         onChange={handleChange}
+        value={task.title}
       />
       <textarea
         name="description"
         placeholder="description"
         onChange={handleChange}
+        value={task.description}
       ></textarea>
       <button>Save</button>
     </form>
