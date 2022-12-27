@@ -26,7 +26,7 @@ function TasksList() {
           <div key={task.id} className="bg-neutral-800 p-4 rounded-md">
             <header className="flex justify-between">
               <h3>{task.title}</h3>
-              <div className="flex">
+              <div className="flex gap-x-2">
                 <Link
                   to={`/edit-task/${task.id}`}
                   className="bg-zinc-600 px-2 py-1 text-xs rounded-md"
