@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <h1>TaskList project using React</h1>
       <App />
     </Provider>
   </React.StrictMode>
