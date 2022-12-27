@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="bg-zinc-900 h-screen text-white">
       <div className="flex items-center justify-center">
-        <h1>TaskList project using React</h1>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<TasksList />} />
