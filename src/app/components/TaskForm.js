@@ -41,6 +41,7 @@ function TaskForm() {
     if (params.id) {
       setTask(tasks.find((task) => task.id === params.id));
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

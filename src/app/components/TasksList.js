@@ -11,8 +11,8 @@ function TasksList() {
   };
 
   return (
-    <div>
-      <header>
+    <div className="w-4/6">
+      <header className="flex justify-between">
         <h1>You have {tasks.length} tasks </h1>
         <Link to="/create-task">Create Task</Link>
       </header>
